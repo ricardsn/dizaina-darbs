@@ -1,0 +1,257 @@
+.antialiased {
+    .next-arrow {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+.navbar {
+    &.mobile {
+        display: flex;
+
+        .navbar-nav {
+            &.language {
+                position: absolute;
+                border: 1px solid white;
+                right: 0;
+                display: block;
+                margin-right: 10px;
+
+                .nav-item {
+                    display: inline-block;
+                    width: 45px;
+
+                    &:first-child {
+                        border-right: 1px solid white;
+                    }
+                }
+
+                .nav-link {
+                    text-align: center;
+                    color: $white;
+                }
+            }
+        }
+
+        @include desktop() {
+            display: none;
+        }
+
+        &.bg-light {
+            background-color: $black!important;
+            padding: 0.5rem 0;
+        }
+
+        .navbar {
+            &-collapse {
+                background-color: $white;
+                z-index: 1;
+                min-height: calc(100vh - 53px + 0.5rem);
+                margin-top: 0.5rem;
+                overflow: hidden;
+
+                .navbar-nav {
+                    margin-top: 40px;
+
+                    .road {
+                        width: 368.71px;
+                        height: 179.77px;
+                        margin: auto;
+                        background: url('./icon/road.png');
+                        background-size: 368.71px 179.77px;
+                        transform: rotate(22.88deg);
+                    }
+
+                    .nav-item {
+                        .nav-link {
+                            font-family: Roboto,;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 18px;
+                            line-height: 21px;
+                            text-align: center;
+                            text-decoration-line: underline;
+                            color: $black;
+                        }
+                    }
+                }
+            }
+
+            &-circle {
+                position: absolute;
+                width: 86px;
+                height: 90px;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 0;
+                border-radius: 50%;
+                background: #960101 url("./icon/Logo-white.png") no-repeat;
+                background-size: 86px 90px;
+                box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+                z-index: 2;
+            }
+
+            &-toggler {
+                color: $white;
+                border-color: $white;
+                margin-left: 20px;
+                background-color: $black;
+
+                &[aria-expanded = "true"] {
+                    background-color: $white;
+
+                    .navbar-toggler-icon {
+                        background: url("./icon/burger-icon-black.svg");
+                    }
+                }
+
+                &-icon {
+                    background: url("./icon/burger-icon.svg");
+                }
+            }
+        }
+    }
+
+    &.desktop {
+        display: none;
+
+        @include desktop() {
+            display: flex;
+        }
+
+        &.bg-light {
+            background-color: $black!important;
+            padding: 0.5rem 0;
+        }
+
+        .navbar {
+            &-nav {
+                width: 100%;
+
+                &.language {
+                    position: absolute;
+                    width: unset;
+                    right: 0;
+                    border: 1px solid $white;
+                    margin-right: 10px;
+
+                    .nav-item {
+                        &:hover {
+                            background-color: $white;
+                        }
+
+                        a {
+                            font-size: 16px;
+                            line-height: 16px;
+                            padding: 8px 0;
+                            width: 50px;
+
+                            &:hover {
+                                color: $black;
+                            }
+                        }
+                    }
+
+                    .lv {
+                        border-right: 1px solid $white;
+                    }
+                }
+
+                .nav {
+                    &-link {
+                        color: $white;
+                    }
+
+                    &-item {
+                        width: 50%;
+
+                        &.dropdown {
+                            .dropdown-menu {
+                                z-index: 1;
+                                width: 100vw;
+                                left: -100%;
+                                border-radius: unset;
+                                border: 0;
+                                padding: 2.5rem 2rem;
+
+                                @include desktop {
+                                    border-bottom: 1px solid $black;
+                                    margin-top: 0;
+                                }
+
+                                .line {
+                                    width: 1px;
+                                    position: absolute;
+                                    left: 50%;
+                                    height: 60%;
+                                    transform: translateX(-50%);
+                                    background-color: $black;
+                                    margin-top: 10px;
+                                }
+
+                                .road {
+                                    position: absolute;
+                                    width: 368.71px;
+                                    height: 179.77px;
+                                    background: url('./icon/road.png');
+                                    background-size: 368.71px 179.77px;
+                                    transform: translateX(+50%);
+                                    right: 23%;
+                                    margin: auto;
+                                }
+
+                                .column1 {
+                                    margin-right: 40px;
+
+                                    @include small-desktop {
+                                        margin-right: 60px;
+                                    }
+                                }
+
+                                a {
+                                    color: $black;
+                                }
+                            }
+                        }
+
+                        a {
+                            margin: auto;
+                            width: 100px;
+                            text-align: center;
+                            font-family: Roboto;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 24px;
+                            line-height: 32px;
+                            text-decoration-line: underline;
+
+                            &:focus, &:hover {
+                                background-color: unset;
+                                font-weight: bold;
+                            }
+
+                            &::after {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &-circle {
+                position: absolute;
+                width: 86px;
+                height: 90px;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 0;
+                border-radius: 50%;
+                background: #960101 url("./icon/Logo-white.png") no-repeat;
+                background-size: 86px 90px;
+                box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+                z-index: 2;
+            }
+        }
+    }
+}

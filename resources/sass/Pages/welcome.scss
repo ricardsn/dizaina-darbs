@@ -1,0 +1,127 @@
+$height: calc(100vh - 64px);
+
+.welcome {
+    @include desktop {
+        height: $height;
+    }
+
+    &-block {
+        @include desktop {
+            display: flex;
+        }
+    }
+
+    &-text {
+        flex: 70%;
+
+        @include desktop {
+            height: $height;
+            order: 2;
+        }
+    }
+
+    &-content {
+        position: absolute;
+        left: 50%;
+        top: 20%;
+        transform: translateX(-50%);
+        width: 90%;
+        text-align: center;
+
+        @include desktop {
+            position: relative;
+            left: unset;
+            top: 20%;
+            transform: unset;
+            width: unset;
+        }
+
+        .line {
+            position: absolute;
+            width: 300px;
+            height: 1px;
+            background-color: $black;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            left: 50%;
+            margin-top: -2px;
+
+            @include desktop {
+                margin-top: 3px;
+                height: 3px;
+                width: 700px;
+            }
+        }
+
+        &-title {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 28.13px;
+
+            @include desktop {
+                font-size: 54px;
+                line-height: 58.13px;
+            }
+        }
+    }
+
+    &-story {
+        position: absolute;
+        right: 20%;
+        top: 30%;
+        background-color: transparent;
+        border: 1px solid $black;
+        padding: 10px 20px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+
+        @include desktop {
+            position: relative;
+            top: 60%;
+            transform: translateX(-50%);
+            left: 50%;
+            right: unset;
+            padding: 23px 67px;
+            font-size: 24px;
+            line-height: 27px;
+            font-weight: bold;
+
+            &:hover {
+                background-color: $black;
+                color: $white;
+            }
+        }
+    }
+
+    .hero-img {
+        background: url("images/ricards.png") no-repeat;
+        background-size: 317.39px  460.86px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 317.39px;
+        height: 460.86px;
+        z-index: -1;
+
+        @include desktop {
+            flex: 30%;
+            position: relative;
+            order: 1;
+            width: 100%;
+            height: $height;
+            background-size: contain;
+            background-position: bottom left;
+        }
+
+        @include small-mobile {
+            background-size: 267.39px 375.86px;
+            width: 267.39px;
+            height: 375.86px;
+        }
+    }
+}

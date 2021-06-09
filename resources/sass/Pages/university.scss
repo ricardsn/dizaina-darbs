@@ -1,0 +1,73 @@
+.university {
+    background-color: $white;
+
+    &-img {
+        background: center url("images/LU-DF.png") no-repeat;
+        background-size: contain;
+        max-height: 272px;
+        height: 100%;
+
+        @include desktop {
+            background-size: contain;
+            max-height: 745px;
+            height: 100%;
+            width: 100%;
+            margin: auto;
+        }
+    }
+
+    .circle {
+        position: absolute;
+        height: 60px;
+        width: 60px;
+        top: -30px;
+        right: -30px;
+        border-radius: 50%;
+        background-color: $custom-red;
+
+        @include small-mobile {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        @include desktop {
+            height: 110px;
+            width: 110px;
+            left: -55px;
+            top: -55px;
+            right: unset;
+        }
+    }
+
+    &-block {
+        position: relative;
+        max-width: 296px;
+        border: 1px solid $black;
+        padding: 39px 7px 11px 30px;
+        margin: 60px auto 50px;
+
+        @include small-desktop {
+            max-width: 900px!important;
+        }
+
+        @include desktop {
+            margin-top: 110px;
+            margin-bottom: 50px;
+            max-width: 1227px;
+            padding: 46px 41px;
+        }
+    }
+
+    &-text {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 15px;
+
+        @include desktop {
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+}

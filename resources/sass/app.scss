@@ -1,0 +1,27 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Media
+@import "media";
+
+// Custom styles
+@import 'Header/header';
+
+// Pages
+@import "Pages/welcome";
+@import "Pages/about";
+@import "Pages/primary-school";
+@import "Pages/games";
+@import "Pages/high-school";
+@import "Pages/courses";
+@import "Pages/hobbies";
+@import "Pages/university";
+
+// Banner
+@import "Banner/banner";
